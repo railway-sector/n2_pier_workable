@@ -1,0 +1,1 @@
+import"./index-DM69G_LB.js";function n(i){const{objectIdField:t,uniqueIdFields:e}=i;return e?.length?e.length>=2?{type:"unique-id-composite",fieldNames:e}:{type:"unique-id-simple",fieldName:e[0]}:{type:"object-id",fieldName:t}}export{n as e};
