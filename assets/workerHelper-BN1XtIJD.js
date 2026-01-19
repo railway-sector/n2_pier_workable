@@ -1,1 +1,0 @@
-import{ie as f,ig as t}from"./index-DM69G_LB.js";function n(u,e){return e.push(u.buffer),{buffer:u.buffer,layout:new f(u.layout)}}function o(u){return new t(u.layout).createView(u.buffer)}export{o as t,n as u};
