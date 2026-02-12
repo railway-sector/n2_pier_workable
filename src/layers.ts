@@ -940,7 +940,7 @@ export const utilityPointLayer = new FeatureLayer({
   maxScale: 0,
   renderer: utility_marker_renderer,
   popupTemplate: {
-    title: "{UtilType}: {Status} for {LAYER} work",
+    title: "{comp_agency} - {UtilType}: {Status} for {LAYER} work",
     lastEditInfoEnabled: false,
   },
 });
@@ -1021,29 +1021,6 @@ export const pier_point_label_completed_all = new LabelClass({
     expression: "$feature.PierNumber",
   },
   where: "AllWorkable = 2",
-});
-
-export const pierPointLayer = new FeatureLayer({
-  portalItem: {
-    id: "876de8483da9485aac5df737cbef2143",
-    portal: {
-      url: "https://gis.railway-sector.com/portal",
-    },
-  },
-  layerId: 6,
-  title: "Piers",
-  popupEnabled: false,
-  definitionExpression:
-    "PierNumber IN ('P-159', 'P-159NB', 'P-159SB', 'P-160', 'P-160NB', 'P-160SB')",
-  renderer: pier_point_renderer_all,
-  labelingInfo: [
-    pier_point_label_workable_all,
-    pier_point_label_nonworkable_all,
-    pier_point_label_completed_all,
-    monopile_label,
-  ],
-  minScale: 2500,
-  maxScale: 0,
 });
 
 ///////////////////////////////////////////////////////
@@ -1180,29 +1157,6 @@ export const monopile_label_overview = new LabelClass({
   where: "AllWorkable = 0 AND PierNumber = 'P-160SB'",
 });
 
-export const pierPointLayer_overview = new FeatureLayer({
-  portalItem: {
-    id: "876de8483da9485aac5df737cbef2143",
-    portal: {
-      url: "https://gis.railway-sector.com/portal",
-    },
-  },
-  layerId: 6,
-  title: "Piers",
-  popupEnabled: false,
-  definitionExpression:
-    "PierNumber IN ('P-159', 'P-159NB', 'P-159SB', 'P-160', 'P-160NB', 'P-160SB')",
-  renderer: pier_point_renderer_all,
-  labelingInfo: [
-    pier_point_label_workable_all,
-    pier_point_label_nonworkable_all,
-    pier_point_label_completed_all,
-    monopile_label_overview,
-  ],
-
-  maxScale: 0,
-});
-
 export const nloLayer_overview = new FeatureLayer({
   portalItem: {
     id: "23500954a8d84a46886e76e6e0883a69",
@@ -1250,7 +1204,7 @@ export const stripMapLayer_overview = new FeatureLayer({
       url: "https://gis.railway-sector.com/portal",
     },
   },
-  outFields: ["PhotoURL", "PageNumber"],
+  outFields: ["PageNumber", "GroupId"],
   title: "Strip Map",
   popupEnabled: false,
   visible: false,
